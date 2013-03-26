@@ -14,7 +14,7 @@ UniqueQueryID
 QueryLine...
 '''
 
-# Copyright (c) 2013 Martin Paul Eve
+# Copyright (c) 2012 Martin Paul Eve
 # Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
 
 import fileinput
