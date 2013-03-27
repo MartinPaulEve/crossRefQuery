@@ -26,15 +26,15 @@ queries = []
 counter = 0
 userinfo = []
 
-
+# read from stdin
 for line in fileinput.input():
 	if counter < 4:
 		userinfo.append(line.replace("\n", ""))
 		counter = counter + 1
 	else:
-		# read from stdin
 		queries.append(line.replace("\n", ""))
 
+# build the querystring
 counter = 1
 querystring = ""
 

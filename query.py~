@@ -14,7 +14,7 @@ UniqueQueryID
 QueryLine...
 '''
 
-# Copyright (c) 2012 Martin Paul Eve
+# Copyright (c) 2013 Martin Paul Eve
 # Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
 
 import fileinput
@@ -26,15 +26,15 @@ queries = []
 counter = 0
 userinfo = []
 
-
+# read from stdin
 for line in fileinput.input():
 	if counter < 4:
 		userinfo.append(line.replace("\n", ""))
 		counter = counter + 1
 	else:
-		# read from stdin
 		queries.append(line.replace("\n", ""))
 
+# build the querystring
 counter = 1
 querystring = ""
 
@@ -53,6 +53,8 @@ query_params = {"usr": userinfo[0],
 		"qdata": querystring}
 
 h = Http()
+
+#print "http://doi.crossref.org/servlet/query?usr=martin@martineve.com&format=unixref&qdata=" + urlencode(query_params)
 
 resp, content = h.request("http://doi.crossref.org/servlet/query?" + urlencode(query_params))
 print content
